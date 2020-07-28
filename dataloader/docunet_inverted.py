@@ -10,7 +10,7 @@ from constants import *
 class InvertedDocunet(data.Dataset):
     NUM_CLASSES = 2
     CLASSES = ["foreground", "background"]
-    ROOT = '../../../datasets/'
+    ROOT = '../../datasets/'
     DEFORMED = 'deformed_labels'
     DEFORMED_EXT = '.jpg'
     VECTOR_FIELD = 'inverted_vf'
@@ -46,8 +46,11 @@ class InvertedDocunet(data.Dataset):
 
     def make_dataset(self):
         current_dir = os.path.dirname(__file__)
+        current_dir = current_dir.replace('\\', '/')
         images_path = os.path.join(current_dir, self.ROOT, self.args.dataset_dir, self.split, self.DEFORMED + '_' + 'x'.join(map(str, self.args.size)))
+        images_path = images_path.replace('\\', '/')
         labels_path = os.path.join(current_dir, self.ROOT, self.args.dataset_dir, self.split, self.VECTOR_FIELD + '_' + 'x'.join(map(str, self.args.size)))
+        labels_path = labels_path.replace('\\', '/')
 
         images_name = os.listdir(images_path)
         images_name = [image_name for image_name in images_name if image_name.endswith(self.DEFORMED_EXT)]
