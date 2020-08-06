@@ -111,7 +111,7 @@ class Trainer(object):
                     ms_ssim_values.append(self.ms_ssim.forward(output, target))
 
                 # Show 10 * 3 inference results each epoch
-                if split != VISUALIZATION and i % (num_img // 10) == 0:
+                if split != VISUALIZATION and i % num_img == 0:
                     self.summary.visualize_image(image, target, output, split=split)
                 elif split == VISUALIZATION:
                     self.summary.visualize_image(image, target, output, split=split)
