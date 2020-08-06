@@ -8,3 +8,5 @@ __pycache__/*
 !.gitkeep
 .vscode/*
 **/.vscode/*
+.ipynb_checkpoints/*
+**/.ipynb_checkpoints/*
