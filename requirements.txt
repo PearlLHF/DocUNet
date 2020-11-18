@@ -20,7 +20,7 @@ matplotlib==1.5.3
 mistune==0.8.4
 nbconvert==5.6.1
 nbformat==5.0.7
-notebook==6.1.1
+notebook==6.1.5
 numpy==1.19.1
 opencv-python==4.3.0.36
 pandocfilters==1.4.2
